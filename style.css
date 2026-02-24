@@ -1,10 +1,8 @@
-<!DOCTYPE html>
-<html>
-<head>
-<style>
+---
+---
+
+@import "{{ site.theme }}";
+
 body {
-  background-color: lightblue;
+  background-color: #f0f0f0;
 }
-</style>
-</head>
-<body>
