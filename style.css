@@ -178,11 +178,12 @@ h1 {
   display: flex;
   flex-direction: column;
   align-items: center;
+
 }
 
 /* Put icons in their own section below */
 .contact-icons {
-  margin-top: 30px;          /* space below pills */
+  margin-top: 10px;          /* space below pills */
   display: flex;
   justify-content: center;
   gap: 50px;                 /* spacing between fruits */
@@ -200,7 +201,7 @@ h1 {
 
 .contact-icons .emoji {
   font-size: 2.2rem;
-  line-height: 1.5;
+  line-height: 2.1;
 }
 
 .contact-icons .label {
