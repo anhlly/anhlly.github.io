@@ -1,165 +1,149 @@
 /* Site-wide styles */
 body {
-    background-color: #f6dce0;
-    font-family: "Gaegu", sans-serif;
-  
-    display: flex;
-    justify-content: center;   /* centers horizontally */
-    align-items: center;       /* centers vertically */
-    height: 100vh;             /* full screen height */
-    margin: 0;                 /* removes default spacing */
-    flex-direction: column;    /* keeps text stacked */
-    text-align: center;        /* centers text inside */
-  }
-  
-  /* Headline */
-  h1 {
-    font-size: 3rem;
-    margin-bottom: 10px;
-  }
-  
-  /* Center the navigation */
-  .pill-nav {
-    margin-top: 20px;
-    margin-bottom: 30px;
-  }
-  
-  /* Style the links */
-  .pill-nav a {
-    display: inline-block;
-    padding: 10px 20px;
-    margin: 0 8px;              /* spacing between pills */
-    text-decoration: none;
-    color: black;
-    background-color: #ffffff;
-    border-radius: 50px;        /* makes it pill-shaped */
-    font-size: 16px;
-    transition: 0.3s ease;
-  }
-  
-  /* Hover effect */
-  .pill-nav a:hover {
-    background-color: #ffa5ba;
-    color: white;
-  }
-  
-  /* Active pill */
-  .pill-nav a.active {
-    background-color: #ff1a5d;
-    color: white;
-  }
+  background-color: #f6dce0;
+  font-family: "Gaegu", sans-serif;
+
+  display: flex;
+  justify-content: center;   /* centers horizontally */
+  align-items: center;       /* centers vertically */
+  height: 100vh;             /* full screen height */
+  margin: 0;                 /* removes default spacing */
+  flex-direction: column;    /* keeps text stacked */
+  text-align: center;        /* centers text inside */
+}
+
+/* Headline */
+h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+/* Center the navigation */
+/* Center the navigation */
+.pill-nav {
+  margin-top: 20px;
+  margin-bottom: 30px;
+
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;      /* wraps only on small screens */
+  gap: 12px;            /* spacing between pills */
+}
+
+/* Style the links */
+.pill-nav a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 10px 20px;
+  text-decoration: none;
+  color: black;
+  background-color: #ffffff;
+  border-radius: 50px;
+  font-size: 16px;
+  transition: 0.3s ease;
+}
+
+/* Hover effect */
+.pill-nav a:hover {
+  background-color: #ffa5ba;
+  color: white;
+}
+
+/* Active pill */
+.pill-nav a.active {
+  background-color: #ff1a5d;
+  color: white;
+}
 /* --- Donut Wheel Container --- */
 .donut-wrap {
-    position: relative;
-    width: min(640px, 92vw);
-    aspect-ratio: 1 / 1;
-    margin: 20px auto 30px;
-  }
-  
-  /* --- Slices (clickable wedges) --- */
-  .slice {
-    position: absolute;
-    inset: 0;
-    border-radius: 50%;
-    text-decoration: none;
-    color: black;
-    display: grid;
-    place-items: center;
-    transition: filter 0.2s ease, transform 0.2s ease;
-    outline: none;
-  }
-  
-  /* Each slice is clipped into a wedge shape */
-  .slice {
-    clip-path: polygon(50% 50%, 100% 0%, 100% 100%);
-  }
-  
-  /* Put the label in the ring area */
-  .slice span {
-    width: 140px;
-    text-align: center;
-    font-size: 1.05rem;
-    line-height: 1.05;
-    transform: translateX(130px); /* pushes text outward into the ring */
-    background: rgba(255,255,255,0.45);
-    border-radius: 999px;
-    padding: 6px 10px;
-    box-shadow: 0 6px 14px rgba(0,0,0,0.10);
-  }
-  
-  /* Hover / focus effects */
-  .slice:hover,
-  .slice:focus-visible {
-    filter: brightness(1.05);
-    transform: scale(1.01);
-  }
-  
-  .slice:hover span,
-  .slice:focus-visible span {
-    background: rgba(255,255,255,0.85);
-  }
-  
-  /* --- 8 slice rotations (45 degrees each) --- */
-  .s0 { background: #fa85a8; transform: rotate(0deg); }
-  .s1 { background: #f8b789; transform: rotate(45deg); }
-  .s2 { background: #f3dc78; transform: rotate(90deg); }
-  .s3 { background: #cafb9c; transform: rotate(135deg); }
-  .s4 { background: #7acdc0; transform: rotate(180deg); }
-  .s5 { background: #92bef0; transform: rotate(225deg); }
-  .s6 { background: #b4a0f4; transform: rotate(270deg); }
-  .s7 { background: #e19fee; transform: rotate(315deg); }
-  
-  /* --- Donut hole mask (cut out the center) --- */
-  .donut-wrap::after {
-    content: "";
-    position: absolute;
-    inset: 22%;
-    border-radius: 50%;
-    background: #f6dce0; /* match page background */
-    z-index: 2;
-  }
-  
-  /* --- Center content sits above the hole --- */
-  .donut-center {
-    position: absolute;
-    inset: 26%;
-    border-radius: 50%;
-    background: rgba(255,255,255,0.92);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.12);
-    z-index: 3;
-  
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 18px;
-    text-align: center;
-  }
-  
-  .center-title {
-    margin: 0;
-    font-size: 2rem;
-  }
-  
-  .center-subtitle {
-    margin: 8px 0 14px;
-    font-size: 1rem;
-  }
-  
-  /* Make sure nav wraps nicely in the center */
+  position: relative;
+  width: min(640px, 92vw);
+  aspect-ratio: 1 / 1;
+  margin: 20px auto 30px;
+}
+
+/* --- Slices (clickable wedges) --- */
+.slice {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  text-decoration: none;
+  color: black;
+  display: grid;
+  place-items: center;
+  transition: filter 0.2s ease, transform 0.2s ease;
+  outline: none;
+}
+
+/* Each slice is clipped into a wedge shape */
+.slice {
+  clip-path: polygon(50% 50%, 100% 0%, 100% 100%);
+}
+
+/* Put the label in the ring area */
+.slice span {
+  width: 140px;
+  text-align: center;
+  font-size: 1.05rem;
+  line-height: 1.05;
+  transform: translateX(130px); /* pushes text outward into the ring */
+  background: rgba(255,255,255,0.45);
+  border-radius: 999px;
+  padding: 6px 10px;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.10);
+}
+
+/* Hover / focus effects */
+.slice:hover,
+.slice:focus-visible {
+  filter: brightness(1.05);
+  transform: scale(1.01);
+}
+
+.slice:hover span,
+.slice:focus-visible span {
+  background: rgba(255,255,255,0.85);
+}
+
+/* --- 7 slice rotations (45 degrees each) --- */
+.s0 { background: #f6a8bf; transform: rotate(0deg); }
+.s1 { background: #f86f98; transform: rotate(45deg); }
+.s2 { background: #f65c8a; transform: rotate(90deg); }
+.s3 { background: #fc4f83; transform: rotate(135deg); }
+.s4 { background: #fa4179; transform: rotate(180deg); }
+.s5 { background: #fa3470; transform: rotate(225deg); }
+.s6 { background: #f92364; transform: rotate(270deg); }
+
+/* --- Donut hole mask (cut out the center) --- */
+.donut-wrap::after {
+  content: "";
+  position: absolute;
+  inset: 22%;
+  border-radius: 50%;
+  background: #f6dce0; /* match page background */
+  z-index: 2;
+}
+
+/* --- Center content sits above the hole --- */
+/* Donut center: keep nav across like homepage */
+.donut-center .pill-nav {
+  margin: 10px 0 0;
+  gap: 10px;
+  flex-wrap: nowrap;    /* keeps it in one row */
+}
+
+/* Slightly smaller pills inside donut so 4 fit across */
+.donut-center .pill-nav a {
+  padding: 8px 14px;
+  font-size: 14px;
+  margin: 0;            /* override any old margins */
+}
+
+/* If screen is too small, allow wrapping */
+@media (max-width: 420px) {
   .donut-center .pill-nav {
-    margin: 0;
+    flex-wrap: wrap;
   }
-  
-  .donut-center .pill-nav a {
-    margin: 6px 6px;
-  }
-  
-  /* Small screens: slightly smaller label */
-  @media (max-width: 460px) {
-    .slice span {
-      width: 120px;
-      font-size: 0.95rem;
-      transform: translateX(110px);
-    }
-  }
+}
