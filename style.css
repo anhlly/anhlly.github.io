@@ -182,7 +182,7 @@ h1 {
 
 /* Put icons in their own section below */
 .contact-icons {
-  margin-top: 20px;          /* space below pills */
+  margin-top: 30px;          /* space below pills */
   display: flex;
   justify-content: center;
   gap: 50px;                 /* spacing between fruits */
@@ -204,7 +204,7 @@ h1 {
 }
 
 .contact-icons .label {
-  margin-top: 10px;
+  margin-top: 20px;
   font-size: 1rem;
 }
 
