@@ -213,3 +213,25 @@ h1 {
   transform: scale(1.12);
   filter: brightness(1.1);
 }
+
+/* --- Top Right Music Icon --- */
+.music-icon {
+  position: fixed;        /* stays in corner */
+  top: 20px;
+  right: 24px;
+
+  font-size: 1.8rem;
+  text-decoration: none;
+
+  background: rgba(255,255,255,0.3);
+  padding: 10px 14px;
+  border-radius: 999px;
+
+  transition: transform 0.2s ease, background 0.2s ease;
+  z-index: 999;
+}
+
+.music-icon:hover {
+  transform: scale(1.15);
+  background: rgba(255,255,255,0.6);
+}
