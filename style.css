@@ -1,0 +1,50 @@
+/* Site-wide styles */
+body {
+    background-color: #f6dce0;
+    font-family: "Gaegu", sans-serif;
+  
+    display: flex;
+    justify-content: center;   /* centers horizontally */
+    align-items: center;       /* centers vertically */
+    height: 100vh;             /* full screen height */
+    margin: 0;                 /* removes default spacing */
+    flex-direction: column;    /* keeps text stacked */
+    text-align: center;        /* centers text inside */
+  }
+  
+  /* Headline */
+  h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+  }
+  
+  /* Center the navigation */
+  .pill-nav {
+    margin-top: 20px;
+    margin-bottom: 30px;
+  }
+  
+  /* Style the links */
+  .pill-nav a {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 0 8px;              /* spacing between pills */
+    text-decoration: none;
+    color: black;
+    background-color: #ffffff;
+    border-radius: 50px;        /* makes it pill-shaped */
+    font-size: 16px;
+    transition: 0.3s ease;
+  }
+  
+  /* Hover effect */
+  .pill-nav a:hover {
+    background-color: #ffa5ba;
+    color: white;
+  }
+  
+  /* Active pill */
+  .pill-nav a.active {
+    background-color: #ff1a5d;
+    color: white;
+  }
