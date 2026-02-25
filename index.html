@@ -6,8 +6,14 @@
     body {
       background-color: #f6dce0;
       font-family: "Courier New", sans-serif;
-      text-align: center;
-      margin: auto;
+
+      display: flex;
+      justify-content: center;   /* centers horizontally */
+      align-items: center;       /* centers vertically */
+      height: 100vh;             /* full screen height */
+      margin: 0;                 /* removes default spacing */
+      flex-direction: column;    /* keeps text stacked */
+      text-align: center;        /* centers text inside */
     }
   </style>
 </head>
