@@ -122,7 +122,7 @@ h1 {
   position: absolute;
   inset: 16%;
   border-radius: 50%;
-  background: rgba(255,255,255,0.92);
+  background: inherit;
   box-shadow: 0 10px 25px rgba(0,0,0,0.12);
   z-index: 3;
 
