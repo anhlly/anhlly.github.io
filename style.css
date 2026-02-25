@@ -71,7 +71,7 @@ h1 {
 
 /* Each slice is clipped into a wedge shape */
 .slice {
-  clip-path: polygon(50% 50%, 100% 0%, 100% 100%);
+  clip-path: polygon(50% 50%, 100% 0%, 100% 50%);
 }
 
 /* Put the label in the ring area */
@@ -97,6 +97,7 @@ h1 {
 .s5 { --rot: 225deg; background: #b90239; }
 .s6 { --rot: 270deg; background: #780528; }
 .s7 { --rot: 315deg; background: #33000f; }
+.s8 { --rot: 360deg; background: #ddacbb; }
 
 /* apply rotation in one place */
 .slice { transform: rotate(var(--rot)); }
@@ -121,7 +122,7 @@ h1 {
 .donut-center {
   position: absolute;
   inset: 16%;
-  border-radius: 50%;
+  border-radius: 60%;
   background: inherit;
   z-index: 3;
 
@@ -134,7 +135,7 @@ h1 {
 }
 
 .center-title {
-  margin: 0;
+  margin: 1;
   font-size: 3rem;
 }
 
@@ -143,18 +144,25 @@ h1 {
   font-size: 1rem;
 }
 
-/* Make sure nav wraps nicely in the center */
-.donut-center .pill-nav a {
-  padding: 10px 20px;   /* same as your global pills */
-  margin: 0 8px;        /* same spacing as other pages */
-  font-size: 16px;      /* same text size */
-}
-
-.donut-center .pill-nav{
+.donut-center .pill-nav {
   display: flex;
   justify-content: center;
   flex-wrap: nowrap;
-  /* no gap here if you want it identical to other pages */
+
+  /* cleaner spacing control — change this number to taste */
+  gap: 24px;
+  /* if you prefer margins on individual pills instead of gap, remove gap and use .donut-center .pill-nav a { margin: 0 12px; } */
+}
+
+/* ensure the pills inside the center use the same pill styling as global ones, or override here */
+.donut-center .pill-nav a {
+  padding: 10px 20px;   /* same as global */
+  margin: 0;            /* gap handles spacing */
+  font-size: 16px;
+  text-decoration: none;
+  border-radius: 50px;
+  transition: 0.3s ease;
+  color: black;
 }
 
 /* Small screens: slightly smaller label */
