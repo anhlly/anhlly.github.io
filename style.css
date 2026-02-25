@@ -145,14 +145,17 @@ h1 {
 }
 
 /* Make sure nav wraps nicely in the center */
-.donut-center .pill-nav {
-  margin: 0;
+.donut-center .pill-nav a {
+  padding: 10px 20px;   /* same as your global pills */
+  margin: 0 8px;        /* same spacing as other pages */
+  font-size: 16px;      /* same text size */
 }
 
 .donut-center .pill-nav{
   display: flex;
   justify-content: center;
-  flex-wrap: nowrap;   /* keep one line */
+  flex-wrap: nowrap;
+  /* no gap here if you want it identical to other pages */
 }
 
 /* Small screens: slightly smaller label */
