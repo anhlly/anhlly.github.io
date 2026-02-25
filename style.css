@@ -144,7 +144,19 @@ h1 {
   font-size: 1rem;
 }
 
-/* --- insert chunk back here --- */
+/* Make sure nav wraps nicely in the center */
+.donut-center .pill-nav a {
+  padding: 10px 20px;   /* same as your global pills */
+  margin: 0 8px;        /* same spacing as other pages */
+  font-size: 16px;      /* same text size */
+}
+
+.donut-center .pill-nav{
+  display: flex;
+  justify-content: center;
+  flex-wrap: nowrap;
+  /* no gap here if you want it identical to other pages */
+}
 
 /* Small screens: slightly smaller label */
 @media (max-width: 460px) {
