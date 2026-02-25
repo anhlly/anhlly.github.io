@@ -88,27 +88,25 @@ h1 {
 }
 
 /* Hover / focus effects */
+/* store rotation per slice */
+.s0 { --rot: 0deg;   background: #e76e92; }
+.s1 { --rot: 45deg;  background: #ff99b7; }
+.s2 { --rot: 90deg;  background: #ff6693; }
+.s3 { --rot: 135deg; background: #fd3f78; }
+.s4 { --rot: 180deg; background: #d91c55; }
+.s5 { --rot: 225deg; background: #b90239; }
+.s6 { --rot: 270deg; background: #780528; }
+.s7 { --rot: 315deg; background: #33000f; }
+
+/* apply rotation in one place */
+.slice { transform: rotate(var(--rot)); }
+
+/* hover adds scale without losing rotation */
 .slice:hover,
 .slice:focus-visible {
   filter: brightness(1.05);
-  transform: scale(1.01);
+  transform: rotate(var(--rot)) scale(1.01);
 }
-
-.slice:hover span,
-.slice:focus-visible span {
-  background: rgba(255,255,255,0.85);
-}
-
-/* --- 8 slice rotations (45 degrees each) --- */
-.s0 { background: #fa85a8; transform: rotate(0deg); }
-.s1 { background: #f8b789; transform: rotate(45deg); }
-.s2 { background: #f3dc78; transform: rotate(90deg); }
-.s3 { background: #cafb9c; transform: rotate(135deg); }
-.s4 { background: #7acdc0; transform: rotate(180deg); }
-.s5 { background: #92bef0; transform: rotate(225deg); }
-.s6 { background: #b4a0f4; transform: rotate(270deg); }
-.s7 { background: #e19fee; transform: rotate(315deg); }
-
 /* --- Donut hole mask (cut out the center) --- */
 .donut-wrap::after {
   content: "";
@@ -151,8 +149,11 @@ h1 {
   margin: 0;
 }
 
-.donut-center .pill-nav a {
-  margin: 6px 6px;
+.donut-center .pill-nav{
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: nowrap;   /* keep one line */
 }
 
 /* Small screens: slightly smaller label */
