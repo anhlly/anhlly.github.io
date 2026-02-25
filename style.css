@@ -111,7 +111,7 @@ h1 {
 .donut-wrap::after {
   content: "";
   position: absolute;
-  inset: 22%;
+  inset: 20%;
   border-radius: 50%;
   background: #f6dce0; /* match page background */
   z-index: 2;
@@ -120,7 +120,7 @@ h1 {
 /* --- Center content sits above the hole --- */
 .donut-center {
   position: absolute;
-  inset: 26%;
+  inset: 22%;
   border-radius: 50%;
   background: rgba(255,255,255,0.92);
   box-shadow: 0 10px 25px rgba(0,0,0,0.12);
