@@ -19,28 +19,20 @@ h1 {
 }
 
 /* Center the navigation */
-/* Center the navigation */
 .pill-nav {
   margin-top: 20px;
   margin-bottom: 30px;
-
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;      /* wraps only on small screens */
-  gap: 12px;            /* spacing between pills */
 }
 
 /* Style the links */
 .pill-nav a {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-
+  display: inline-block;
   padding: 10px 20px;
+  margin: 0 8px;              /* spacing between pills */
   text-decoration: none;
   color: black;
   background-color: #ffffff;
-  border-radius: 50px;
+  border-radius: 50px;        /* makes it pill-shaped */
   font-size: 16px;
   transition: 0.3s ease;
 }
@@ -107,14 +99,15 @@ h1 {
   background: rgba(255,255,255,0.85);
 }
 
-/* --- 7 slice rotations (45 degrees each) --- */
-.s0 { background: #f6a8bf; transform: rotate(0deg); }
-.s1 { background: #f86f98; transform: rotate(45deg); }
-.s2 { background: #f65c8a; transform: rotate(90deg); }
-.s3 { background: #fc4f83; transform: rotate(135deg); }
-.s4 { background: #fa4179; transform: rotate(180deg); }
-.s5 { background: #fa3470; transform: rotate(225deg); }
-.s6 { background: #f92364; transform: rotate(270deg); }
+/* --- 8 slice rotations (45 degrees each) --- */
+.s0 { background: #fa85a8; transform: rotate(0deg); }
+.s1 { background: #f8b789; transform: rotate(45deg); }
+.s2 { background: #f3dc78; transform: rotate(90deg); }
+.s3 { background: #cafb9c; transform: rotate(135deg); }
+.s4 { background: #7acdc0; transform: rotate(180deg); }
+.s5 { background: #92bef0; transform: rotate(225deg); }
+.s6 { background: #b4a0f4; transform: rotate(270deg); }
+.s7 { background: #e19fee; transform: rotate(315deg); }
 
 /* --- Donut hole mask (cut out the center) --- */
 .donut-wrap::after {
@@ -127,23 +120,46 @@ h1 {
 }
 
 /* --- Center content sits above the hole --- */
-/* Donut center: keep nav across like homepage */
+.donut-center {
+  position: absolute;
+  inset: 26%;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.92);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+  z-index: 3;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 18px;
+  text-align: center;
+}
+
+.center-title {
+  margin: 0;
+  font-size: 2rem;
+}
+
+.center-subtitle {
+  margin: 8px 0 14px;
+  font-size: 1rem;
+}
+
+/* Make sure nav wraps nicely in the center */
 .donut-center .pill-nav {
-  margin: 10px 0 0;
-  gap: 10px;
-  flex-wrap: nowrap;    /* keeps it in one row */
+  margin: 0;
 }
 
-/* Slightly smaller pills inside donut so 4 fit across */
 .donut-center .pill-nav a {
-  padding: 8px 14px;
-  font-size: 14px;
-  margin: 0;            /* override any old margins */
+  margin: 6px 6px;
 }
 
-/* If screen is too small, allow wrapping */
-@media (max-width: 420px) {
-  .donut-center .pill-nav {
-    flex-wrap: wrap;
+/* Small screens: slightly smaller label */
+@media (max-width: 460px) {
+  .slice span {
+    width: 120px;
+    font-size: 0.95rem;
+    transform: translateX(110px);
   }
 }
