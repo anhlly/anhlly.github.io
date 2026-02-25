@@ -48,3 +48,145 @@ body {
     background-color: #ff1a5d;
     color: white;
   }
+  /* --- Wheel layout container --- */
+.wheel-wrap {
+    position: relative;
+    width: min(520px, 92vw);
+    aspect-ratio: 1 / 1;
+    margin: 18px auto 24px;
+  }
+  
+  /* --- Donut wheel background (color-wheel vibe) --- */
+  .wheel {
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    /* 8 slices (adjust if you change project count) */
+    background:
+      conic-gradient(
+        #ff1a5d 0deg 45deg,
+        #ff6b00 45deg 90deg,
+        #ffd000 90deg 135deg,
+        #7CFF00 135deg 180deg,
+        #00d1b2 180deg 225deg,
+        #0077ff 225deg 270deg,
+        #6b3cff 270deg 315deg,
+        #d600ff 315deg 360deg
+      );
+    box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+  }
+  
+  /* Cut out the center to make it a donut */
+  .wheel::after {
+    content: "";
+    position: absolute;
+    inset: 18%;
+    border-radius: 50%;
+    background: #f6dce0; /* match your page background */
+  }
+  
+  /* --- Center content (navigation stays here) --- */
+  .wheel-center {
+    position: absolute;
+    inset: 22%;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.90);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.10);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 18px;
+    text-align: center;
+  }
+  
+  .wheel-title {
+    margin: 0;
+    font-size: 2rem;
+  }
+  
+  .wheel-subtitle {
+    margin: 4px 0 12px;
+  }
+  
+  /* --- Project dots positioned around the ring --- */
+  .project-dot {
+    --angle: 0deg;               /* set per class below */
+    --radius: 42%;               /* distance from center */
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.92);
+    border: 3px solid rgba(0,0,0,0.08);
+    box-shadow: 0 8px 18px rgba(0,0,0,0.10);
+    transform:
+      translate(-50%, -50%)
+      rotate(var(--angle))
+      translateY(calc(-1 * var(--radius)))
+      rotate(calc(-1 * var(--angle)));
+    display: grid;
+    place-items: center;
+    text-decoration: none;
+    color: black;
+    transition: transform 0.18s ease, background-color 0.18s ease;
+  }
+  
+  /* Label inside dot */
+  .project-dot span {
+    font-size: 0.9rem;
+    padding: 0 8px;
+    line-height: 1.05;
+  }
+  
+  /* Hover makes it feel "active" */
+  .project-dot:hover {
+    background-color: #ffa5ba;
+    transform:
+      translate(-50%, -50%)
+      rotate(var(--angle))
+      translateY(calc(-1 * var(--radius)))
+      rotate(calc(-1 * var(--angle)))
+      scale(1.06);
+  }
+  
+  /* Optional: show a bigger tooltip label outside the dot */
+  .project-dot::after {
+    content: attr(aria-label);
+    position: absolute;
+    top: 78px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: white;
+    padding: 6px 10px;
+    border-radius: 999px;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    box-shadow: 0 8px 18px rgba(0,0,0,0.10);
+    transition: opacity 0.18s ease, transform 0.18s ease;
+    font-size: 0.95rem;
+  }
+  
+  .project-dot:hover::after {
+    opacity: 1;
+    transform: translateX(-50%) translateY(-4px);
+  }
+  
+  /* --- Angles for 8 projects (360/8 = 45 degrees) --- */
+  .a0 { --angle:   0deg; }
+  .a1 { --angle:  45deg; }
+  .a2 { --angle:  90deg; }
+  .a3 { --angle: 135deg; }
+  .a4 { --angle: 180deg; }
+  .a5 { --angle: 225deg; }
+  .a6 { --angle: 270deg; }
+  .a7 { --angle: 315deg; }
+  
+  /* Small screens: shrink dots a bit */
+  @media (max-width: 420px) {
+    .project-dot { width: 58px; height: 58px; }
+    .wheel-title { font-size: 1.6rem; }
+  }
