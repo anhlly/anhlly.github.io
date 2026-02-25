@@ -48,50 +48,86 @@ body {
     background-color: #ff1a5d;
     color: white;
   }
-  /* --- Wheel layout container --- */
-.wheel-wrap {
+/* --- Donut Wheel Container --- */
+.donut-wrap {
     position: relative;
-    width: min(520px, 92vw);
+    width: min(640px, 92vw);
     aspect-ratio: 1 / 1;
-    margin: 18px auto 24px;
+    margin: 20px auto 30px;
   }
   
-  /* --- Donut wheel background (color-wheel vibe) --- */
-  .wheel {
+  /* --- Slices (clickable wedges) --- */
+  .slice {
     position: absolute;
     inset: 0;
     border-radius: 50%;
-    /* 8 slices (adjust if you change project count) */
-    background:
-      conic-gradient(
-        #ff1a5d 0deg 45deg,
-        #ff6b00 45deg 90deg,
-        #ffd000 90deg 135deg,
-        #7CFF00 135deg 180deg,
-        #00d1b2 180deg 225deg,
-        #0077ff 225deg 270deg,
-        #6b3cff 270deg 315deg,
-        #d600ff 315deg 360deg
-      );
-    box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+    text-decoration: none;
+    color: black;
+    display: grid;
+    place-items: center;
+    transition: filter 0.2s ease, transform 0.2s ease;
+    outline: none;
   }
   
-  /* Cut out the center to make it a donut */
-  .wheel::after {
+  /* Each slice is clipped into a wedge shape */
+  .slice {
+    clip-path: polygon(50% 50%, 100% 0%, 100% 100%);
+  }
+  
+  /* Put the label in the ring area */
+  .slice span {
+    width: 140px;
+    text-align: center;
+    font-size: 1.05rem;
+    line-height: 1.05;
+    transform: translateX(130px); /* pushes text outward into the ring */
+    background: rgba(255,255,255,0.45);
+    border-radius: 999px;
+    padding: 6px 10px;
+    box-shadow: 0 6px 14px rgba(0,0,0,0.10);
+  }
+  
+  /* Hover / focus effects */
+  .slice:hover,
+  .slice:focus-visible {
+    filter: brightness(1.05);
+    transform: scale(1.01);
+  }
+  
+  .slice:hover span,
+  .slice:focus-visible span {
+    background: rgba(255,255,255,0.85);
+  }
+  
+  /* --- 8 slice rotations (45 degrees each) --- */
+  .s0 { background: #fa85a8; transform: rotate(0deg); }
+  .s1 { background: #f8b789; transform: rotate(45deg); }
+  .s2 { background: #f3dc78; transform: rotate(90deg); }
+  .s3 { background: #cafb9c; transform: rotate(135deg); }
+  .s4 { background: #7acdc0; transform: rotate(180deg); }
+  .s5 { background: #92bef0; transform: rotate(225deg); }
+  .s6 { background: #b4a0f4; transform: rotate(270deg); }
+  .s7 { background: #e19fee; transform: rotate(315deg); }
+  
+  /* --- Donut hole mask (cut out the center) --- */
+  .donut-wrap::after {
     content: "";
-    position: absolute;
-    inset: 18%;
-    border-radius: 50%;
-    background: #f6dce0; /* match your page background */
-  }
-  
-  /* --- Center content (navigation stays here) --- */
-  .wheel-center {
     position: absolute;
     inset: 22%;
     border-radius: 50%;
-    background: rgba(255,255,255,0.90);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.10);
+    background: #f6dce0; /* match page background */
+    z-index: 2;
+  }
+  
+  /* --- Center content sits above the hole --- */
+  .donut-center {
+    position: absolute;
+    inset: 26%;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.92);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+    z-index: 3;
+  
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -100,93 +136,30 @@ body {
     text-align: center;
   }
   
-  .wheel-title {
+  .center-title {
     margin: 0;
     font-size: 2rem;
   }
   
-  .wheel-subtitle {
-    margin: 4px 0 12px;
+  .center-subtitle {
+    margin: 8px 0 14px;
+    font-size: 1rem;
   }
   
-  /* --- Project dots positioned around the ring --- */
-  .project-dot {
-    --angle: 0deg;               /* set per class below */
-    --radius: 42%;               /* distance from center */
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    width: 70px;
-    height: 70px;
-    border-radius: 50%;
-    background: rgba(255,255,255,0.92);
-    border: 3px solid rgba(0,0,0,0.08);
-    box-shadow: 0 8px 18px rgba(0,0,0,0.10);
-    transform:
-      translate(-50%, -50%)
-      rotate(var(--angle))
-      translateY(calc(-1 * var(--radius)))
-      rotate(calc(-1 * var(--angle)));
-    display: grid;
-    place-items: center;
-    text-decoration: none;
-    color: black;
-    transition: transform 0.18s ease, background-color 0.18s ease;
+  /* Make sure nav wraps nicely in the center */
+  .donut-center .pill-nav {
+    margin: 0;
   }
   
-  /* Label inside dot */
-  .project-dot span {
-    font-size: 0.9rem;
-    padding: 0 8px;
-    line-height: 1.05;
+  .donut-center .pill-nav a {
+    margin: 6px 6px;
   }
   
-  /* Hover makes it feel "active" */
-  .project-dot:hover {
-    background-color: #ffa5ba;
-    transform:
-      translate(-50%, -50%)
-      rotate(var(--angle))
-      translateY(calc(-1 * var(--radius)))
-      rotate(calc(-1 * var(--angle)))
-      scale(1.06);
-  }
-  
-  /* Optional: show a bigger tooltip label outside the dot */
-  .project-dot::after {
-    content: attr(aria-label);
-    position: absolute;
-    top: 78px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: white;
-    padding: 6px 10px;
-    border-radius: 999px;
-    white-space: nowrap;
-    opacity: 0;
-    pointer-events: none;
-    box-shadow: 0 8px 18px rgba(0,0,0,0.10);
-    transition: opacity 0.18s ease, transform 0.18s ease;
-    font-size: 0.95rem;
-  }
-  
-  .project-dot:hover::after {
-    opacity: 1;
-    transform: translateX(-50%) translateY(-4px);
-  }
-  
-  /* --- Angles for 8 projects (360/8 = 45 degrees) --- */
-  .a0 { --angle:   0deg; }
-  .a1 { --angle:  45deg; }
-  .a2 { --angle:  90deg; }
-  .a3 { --angle: 135deg; }
-  .a4 { --angle: 180deg; }
-  .a5 { --angle: 225deg; }
-  .a6 { --angle: 270deg; }
-  .a7 { --angle: 315deg; }
-  
-  /* Small screens: shrink dots a bit */
-  @media (max-width: 420px) {
-    .project-dot { width: 58px; height: 58px; }
-    .wheel-title { font-size: 1.6rem; }
+  /* Small screens: slightly smaller label */
+  @media (max-width: 460px) {
+    .slice span {
+      width: 120px;
+      font-size: 0.95rem;
+      transform: translateX(110px);
+    }
   }
