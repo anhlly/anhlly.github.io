@@ -80,7 +80,7 @@ h1 {
   text-align: center;
   font-size: 1.05rem;
   line-height: 1.05;
-  transform: translateX(130px); /* pushes text outward into the ring */
+  transform: translateX(150px); /* pushes text outward into the ring */
   background: rgba(255,255,255,0.45);
   border-radius: 999px;
   padding: 6px 10px;
