@@ -172,3 +172,43 @@ h1 {
     transform: translateX(110px);
   }
 }
+
+
+.contact-top {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Put icons in their own section below */
+.contact-icons {
+  margin-top: 20px;          /* space below pills */
+  display: flex;
+  justify-content: center;
+  gap: 50px;                 /* spacing between fruits */
+}
+
+/* Each icon becomes a vertical stack: fruit then label */
+.contact-icons .icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  color: black;
+  transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.contact-icons .emoji {
+  font-size: 2.2rem;
+  line-height: 1.5;
+}
+
+.contact-icons .label {
+  margin-top: 10px;
+  font-size: 1rem;
+}
+
+.contact-icons .icon:hover {
+  transform: scale(1.12);
+  filter: brightness(1.1);
+}
