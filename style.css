@@ -178,12 +178,12 @@ h1 {
 
 
 .contact-top {
-  transform: translateY(-60px);
+  margin-top: 100px;
 }
 
 /* Put icons in their own section below */
 .contact-icons {
-  margin-top: 0px;          /* space below pills */
+  margin-top: 20px;          /* space below pills */
   display: flex;
   justify-content: center;
   gap: 50px;                 /* spacing between fruits */
@@ -204,11 +204,14 @@ h1 {
 }
 
 .contact-icons .label {
-  margin-top: -50px;
+  margin-top: 10px;
   font-size: 1rem;
 }
 
 .contact-icons .icon:hover {
   transform: scale(1.12);
   filter: brightness(1.1);
+}
+.contact-bottom {
+  margin-top: 120px;
 }
