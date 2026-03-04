@@ -21,9 +21,9 @@ h1 {
 
 /* Center the navigation */
 .pill-nav {
-  position: fixed;
-  margin-top: 250px;
-  margin-bottom: 110px;
+  position: sticky;
+  margin-top: 20px;
+  margin-bottom: 10px;
 }
 
 /* Style the links */
@@ -213,5 +213,5 @@ h1 {
   filter: brightness(1.1);
 }
 .contact-bottom {
-  margin-top: 120px;
+  margin-top: 30px;
 }
