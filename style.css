@@ -12,6 +12,19 @@ body {
   overflow: visible;   
 }
 
+body2 {
+  background-color: #f6dce0;
+  font-family: "Gaegu", sans-serif;
+
+  display: flex;
+  justify-content: center;   /* centers horizontally */
+  align-items: center;       /* centers vertically */
+  height: 600vh;             /* full screen height */                /* removes default spacing */
+  flex-direction: column;    /* keeps text stacked */
+  text-align: center;  
+  overflow: visible;   
+}
+
 /* Headline */
 h1 {
   font-size: 3rem;
