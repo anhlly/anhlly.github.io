@@ -6,12 +6,25 @@ body {
   display: flex;
   justify-content: center;   /* centers horizontally */
   align-items: center;       /* centers vertically */
-  height: 100vh;             /* full screen height */
-  margin: 0;                 /* removes default spacing */
+  height: 100vh;             /* full screen height */                /* removes default spacing */
   flex-direction: column;    /* keeps text stacked */
-  text-align: center;        /* centers text inside */
+  text-align: center;  
+  overflow: visible;   
 }
 
+bodyabout{
+  background-color: #f6dce0;
+  font-family: "Gaegu", sans-serif;
+
+  display: flex;
+  justify-content: center;   /* centers horizontally */
+  align-items: center;       /* centers vertically */
+  margin-top: 280px;
+  height: 100vh;             /* full screen height */                /* removes default spacing */
+  flex-direction: column;    /* keeps text stacked */
+  text-align: center;  
+  overflow: visible;   
+}
 /* Headline */
 h1 {
   font-size: 3rem;
@@ -217,6 +230,19 @@ h1 {
 }
 
 .contactPhoto {
-  float: right;
-  width:40% 
+  float: left;
+  width:40%;
+  border-radius: 10px;
+  border: 3px solid #fd3f78;
+  margin-right: 20px;
+  margin-left: 20px;
+}
+
+.contact-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin-right: 20px;
+  margin-left: 20px;
 }
