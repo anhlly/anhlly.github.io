@@ -215,3 +215,8 @@ h1 {
 .contact-bottom {
   margin-top: 30px;
 }
+
+.contactPhoto {
+  float: right;
+  width: 50%
+}
