@@ -12,19 +12,6 @@ body {
   overflow: visible;   
 }
 
-bodyabout {
-  background-color: #f6dce0;
-  font-family: "Gaegu", sans-serif;
-
-  display: flex;
-  justify-content: center;   /* centers horizontally */
-  align-items: center;       /* centers vertically */
-  margin-top: 500px;
-  height: 100vh;             /* full screen height */                /* removes default spacing */
-  flex-direction: column;    /* keeps text stacked */
-  text-align: center;  
-  overflow: visible;   
-}
 /* Headline */
 h1 {
   font-size: 3rem;
@@ -234,19 +221,15 @@ h1 {
   width: 60%;
   border-radius: 10px;
   border: 3px;
+  margin: auto;
   margin-right: 50px;
-  margin-left: 50px;
-  margin-top: 200px;
-  margin-bottom: 50px;
 }
 
 .contact-section {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
   font-size: larger;
   margin: auto;
-  padding: 0 20px;
-  max-width: 800px;
+  max-width: 900px;
 }
