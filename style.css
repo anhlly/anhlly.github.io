@@ -1,7 +1,28 @@
 /* Site-wide styles */
+:root{
+  --base-color: #f6dce0;
+  --base-variant: #352B2E;
+  --text-color: #352B2E;
+  --secondary-text: #FFFFFF;
+  --tertiary-text: #352B2E;
+  --primary-color: #D6014F;
+  --accent-color: #FFC5CD ;
+
+}
+
+.darkmode{
+  --base-color: #352B2E;
+  --base-variant: #F6DCE0;
+  --text-color: #FF9CAF;
+  --secondary-text: #81022B;
+  --tertiary-text: #F6DCE0;
+  --primary-color: #FF9CAF;
+  --accent-color: #633b48 ;
+}
 body {
-  background-color: #f6dce0;
+  background-color: var(--base-color);
   font-family: "Gaegu", sans-serif;
+  color: var(--text-color);
 
   display: flex;
   justify-content: center;   /* centers horizontally */
@@ -13,8 +34,9 @@ body {
 }
 
 body2 {
-  background-color: #f6dce0;
+  background-color: var(--base-color);
   font-family: "Gaegu", sans-serif;
+  color: var(--text-color);
 
   display: flex;
   justify-content: center;   /* centers horizontally */
@@ -45,8 +67,8 @@ h1 {
   padding: 10px 20px;
   margin: 0 8px;              /* spacing between pills */
   text-decoration: none;
-  color: black;
-  background-color: #ffffff;
+  color: var(--tertiary-texttext);
+  background-color: var(--accent-color);
   border-radius: 50px;        /* makes it pill-shaped */
   font-size: 16px;
   transition: 0.3s ease;
@@ -55,14 +77,15 @@ h1 {
 
 /* Hover effect */
 .pill-nav a:hover {
-  background-color: #ffa5ba;
-  color: white;
+  background-color: var(--primary-color);
+  color: var(--secondary-text);
+  opacity: 0.5;
 }
 
 /* Active pill */
 .pill-nav a.active {
-  background-color: #ff1a5d;
-  color: white;
+  background-color: var(--primary-color);
+  color: var(--secondary-text);
 }
 /* --- Donut Wheel Container --- */
 .donut-wrap {
@@ -208,7 +231,7 @@ h1 {
   flex-direction: column;
   align-items: center;
   text-decoration: none;
-  color: black;
+  color: var(--text-color);
   transition: transform 0.2s ease, filter 0.2s ease;
 }
 
@@ -245,4 +268,32 @@ h1 {
   font-size: larger;
   margin: auto;
   max-width: 1000px;
+}
+
+#theme-switch{
+  height: 50px;
+  width: 50px;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  background: transparent; 
+  border: none;            
+  outline: none;           
+  cursor: pointer;
+}
+#theme-switch svg{
+  fill: var(--base-variant);
+}
+#theme-switch svg:last-child{
+  display: none;
+}
+.darkmode #theme-switch svg:first-child{
+  display: none;
+}
+.darkmode #theme-switch svg:last-child{
+  display: block;
 }
