@@ -153,7 +153,7 @@ h1 {
   position: absolute;
   inset: 14%;
   border-radius: 50%;
-  background: #f6dce0; /* match page background */
+  background: var(--base-color); /* match page background */
   z-index: 2;
 }
 
