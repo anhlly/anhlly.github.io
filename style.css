@@ -33,20 +33,47 @@ body {
   overflow: visible;   
 }
 
-body2 {
-  background-color: var(--base-color);
-  font-family: "Gaegu", sans-serif;
-  color: var(--text-color);
+/* About Page */
+.about-page {
+  display: block;
+  min-height: 100vh;
+}
+.about-hero {
+  min-height: 100vh;
 
   display: flex;
-  justify-content: center;   /* centers horizontally */
-  align-items: center;       /* centers vertically */
-  height: 600vh;             /* full screen height */                /* removes default spacing */
-  flex-direction: column;    /* keeps text stacked */
-  text-align: center;  
-  overflow: visible;   
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
+.contactPhoto {
+  width: 300px;
+  max-width: 100%;
+  border-radius: 12px;
+  margin-right: 40px;
+}
+.contact-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  max-width: 1000px;
+  margin: 100px auto;
+
+  padding: 0 30px;
+  gap: 40px;
+}
+@media (max-width: 768px) {
+  .contact-section {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .contactPhoto {
+    margin-right: 0;
+  }
+}
 /* Headline */
 h1 {
   font-size: 3rem;
@@ -153,7 +180,7 @@ h1 {
   position: absolute;
   inset: 14%;
   border-radius: 50%;
-  background: var(--base-color); /* match page background */
+  background: var(base); /* match page background */
   z-index: 2;
 }
 
@@ -212,7 +239,7 @@ h1 {
   }
 }
 
-
+/* Contact Page */
 .contact-top {
   margin-top: 20px;
 }
@@ -270,6 +297,8 @@ h1 {
   max-width: 1000px;
 }
 
+
+/* Changing from Light to Dark Mode */
 #theme-switch{
   height: 50px;
   width: 50px;
