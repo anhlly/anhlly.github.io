@@ -180,7 +180,7 @@ h1 {
   position: absolute;
   inset: 14%;
   border-radius: 50%;
-  background: var(base); /* match page background */
+  background: var(--base-color); /* match page background */
   z-index: 2;
 }
 
