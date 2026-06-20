@@ -7,7 +7,15 @@
   --tertiary-text: #352B2E;
   --primary-color: #D6014F;
   --accent-color: #FFC5CD ;
-
+  --slice-zero: #e76e92;
+  --slice-one: #ff99b7;
+  --slice-two: #ff6693;
+  --slice-three: #fd3f78;
+  --slice-four: #d91c55;
+  --slice-five: #b90239;
+  --slice-six: #780528;
+  --slice-seven: #33000f;
+  --slice-eight: #ddacbb;
 }
 
 .darkmode{
@@ -18,6 +26,15 @@
   --tertiary-text: #F6DCE0;
   --primary-color: #FF9CAF;
   --accent-color: #633b48 ;
+  --slice-zero: #FFC5CD;
+  --slice-one: #EAADB7;
+  --slice-two: #D695A1;
+  --slice-three: #C17C8A;
+  --slice-four: #AC6474;
+  --slice-five: #974C5E;
+  --slice-six: #833448;
+  --slice-seven: #6E1B31;
+  --slice-eight: #59031B;
 }
 body {
   background-color: var(--base-color);
@@ -140,7 +157,7 @@ h1 {
   clip-path: polygon(50% 50%, 100% 0%, 100% 50%);
 }
 
-/* Put the label in the ring area */
+/* Put the label in the ring aread */
 .slice span {
   width: 140px;
   text-align: center;
@@ -155,15 +172,15 @@ h1 {
 
 /* Hover / focus effects */
 /* store rotation per slice */
-.s0 { --rot: 0deg;   background: #e76e92; }
-.s1 { --rot: 45deg;  background: #ff99b7; }
-.s2 { --rot: 90deg;  background: #ff6693; }
-.s3 { --rot: 135deg; background: #fd3f78; }
-.s4 { --rot: 180deg; background: #d91c55; }
-.s5 { --rot: 225deg; background: #b90239; }
-.s6 { --rot: 270deg; background: #780528; }
-.s7 { --rot: 315deg; background: #33000f; }
-.s8 { --rot: 360deg; background: #ddacbb; }
+.s0 { --rot: 0deg;   background: var(--slice-zero); }
+.s1 { --rot: 45deg;  background: var(--slice-one); }
+.s2 { --rot: 90deg;  background: var(--slice-two); }
+.s3 { --rot: 135deg; background: var(--slice-three); }
+.s4 { --rot: 180deg; background: var(--slice-four); }
+.s5 { --rot: 225deg; background: var(--slice-five); }
+.s6 { --rot: 270deg; background: var(--slice-six); }
+.s7 { --rot: 315deg; background: var(--slice-seven); }
+.s8 { --rot: 360deg; background: var(--slice-eight); }
 
 /* apply rotation in one place */
 .slice { transform: rotate(var(--rot)); }
