@@ -26,15 +26,15 @@
   --tertiary-text: #F6DCE0;
   --primary-color: #FF9CAF;
   --accent-color: #633b48 ;
-  --slice-zero: #FFC5CD;
-  --slice-one: #EAADB7;
-  --slice-two: #D695A1;
-  --slice-three: #C17C8A;
-  --slice-four: #AC6474;
-  --slice-five: #974C5E;
-  --slice-six: #833448;
-  --slice-seven: #6E1B31;
-  --slice-eight: #59031B;
+  --slice-zero:#EAADB7;
+  --slice-one: #D695A1;
+  --slice-two: #C17C8A;
+  --slice-three:#AC6474;
+  --slice-four: #974C5E;
+  --slice-five: #833448;
+  --slice-six: #6E1B31;
+  --slice-seven: #59031B;
+  --slice-eight: #AC6474;
 }
 body {
   background-color: var(--base-color);
