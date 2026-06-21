@@ -6,7 +6,6 @@
   --secondary-text: #FFFFFF;
   --tertiary-text: #352B2E;
   --primary-color: #D6014F;
-  --primary-head: #D6014F;
   --accent-color: #FFC5CD ;
   --slice-zero: #e76e92;
   --slice-one: #ff99b7;
@@ -25,8 +24,7 @@
   --text-color: #FF9CAF;
   --secondary-text: #81022B;
   --tertiary-text: #F6DCE0;
-  --primary-color: #FF9CAF;
-  --primary-head: #633b48;
+  --primary-color: #fec1cb;
   --accent-color: #633b48 ;
   --slice-zero:#EAADB7;
   --slice-one: #D695A1;
@@ -101,15 +99,14 @@ body {
   margin-top: 100px;
   width: auto;
   height: auto;
-  color: var(--primary-head);
+  color: var(--primary-color);
 }
 .paper-plane svg {
-  width: 60%;
-  height: auto;
+  width: 50%;
 }
 
 .recent-adv {
-  color: var(--base-variant)
+  color: var(--text-color)
 }
 
 /* Headline */
