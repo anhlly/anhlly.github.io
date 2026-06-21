@@ -6,6 +6,7 @@
   --secondary-text: #FFFFFF;
   --tertiary-text: #352B2E;
   --primary-color: #D6014F;
+  --primary-head: #D6014F;
   --accent-color: #FFC5CD ;
   --slice-zero: #e76e92;
   --slice-one: #ff99b7;
@@ -25,6 +26,7 @@
   --secondary-text: #81022B;
   --tertiary-text: #F6DCE0;
   --primary-color: #FF9CAF;
+  --primary-head: #633b48;
   --accent-color: #633b48 ;
   --slice-zero:#EAADB7;
   --slice-one: #D695A1;
@@ -91,6 +93,21 @@ body {
     margin-right: 0;
   }
 }
+
+.paper-plane {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 100px;
+  width: 75%;
+  height: auto;
+  color: var(--primary-head);
+}
+
+.recent-adv {
+  color: var(--base-variant)
+}
+
 /* Headline */
 h1 {
   font-size: 3rem;
@@ -313,17 +330,6 @@ h1 {
   max-width: 1000px;
 }
 
-.paper-plane {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 100px;
-  fill: var(--accent-color);
-}
-
-.recent-adv {
-  color: var(--base-variant)
-}
 
 
 /* Changing from Light to Dark Mode */
