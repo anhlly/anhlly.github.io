@@ -102,7 +102,9 @@ body {
   color: var(--primary-color);
 }
 .paper-plane svg {
-  width: 75%;
+  width: 100%;
+  height: auto;
+  display: block;
 }
 
 
