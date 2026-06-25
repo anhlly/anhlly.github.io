@@ -102,12 +102,10 @@ body {
   color: var(--primary-color);
 }
 .paper-plane svg {
-  width: 50%;
+  width: 60%;
 }
 
-.recent-adv {
-  color: var(--text-color)
-}
+
 
 /* Headline */
 h1 {
@@ -359,5 +357,35 @@ h1 {
   display: none;
 }
 .darkmode #theme-switch svg:last-child{
+  display: block;
+}
+
+.photo-gallery {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+
+  max-width: 900px;
+  margin: 2rem auto;
+}
+
+.gallery-img {
+  width: 100%;
+  height: 180px; /* make smaller */
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+/* Hide dark images by default */
+.dark-img {
+  display: none;
+}
+
+/* When dark mode is active */
+.darkmode .light-img {
+  display: none;
+}
+
+.darkmode .dark-img {
   display: block;
 }
